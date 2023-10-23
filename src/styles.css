@@ -1,0 +1,99 @@
+/* Add application styles & imports to this file! */
+
+:root {
+  /* Main Styles */
+  --main-bg-color: #000000eb;
+  --main-font-color: #fff;
+  --main-btn-color: #800080;
+
+  --secondary-bg-color: #fff;
+  --secondary-font-color: var(--main-bg-color);
+
+  --red-heart: #e31b23;
+  --dark-green: #008001;
+  --light-green: #09a50a;
+  --blue-sky: #444cf7;
+  --transparent: rgba(0, 0, 0, 0);
+  --dark-wood: #3c3b3a;
+
+  --px-1: 5px;
+  --px-2: 10px;
+  --px-3: 15px;
+  --px-4: 20px;
+
+  --table-card-height: 160px;
+
+  /* Card Component */
+  --card-height: 60px;
+  --card-width: 30px;
+  --card-font-size: 1em;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
+  font-family: 'Ubuntu', sans-serif;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--transparent),
+    var(--main-btn-color),
+    var(--transparent)
+  );
+}
+
+.btn-green {
+  background-color: var(--dark-green);
+}
+
+.btn-purple {
+  background: var(--main-btn-color);
+}
+
+.btn-red {
+  background: var(--red-heart);
+}
+
+h1 {
+  font-size: 1.25em;
+}
+
+h3 {
+  font-size: 0.875em;
+}
+
+small {
+  font-size: 0.625em;
+}
+
+@media (min-width: 1025px) {
+  hr {
+    width: 500px;
+  }
+}
+
+@keyframes flip-in {
+  0% {
+    transform: rotateY(-80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes roll-in-bottom {
+  0% {
+    transform: translateY(200px) rotate(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}

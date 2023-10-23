@@ -1,0 +1,54 @@
+<main>
+  <div class="computer-wrap">
+    <h3>Computer
+      <strong *ngIf="!hideComputerCards && !this.playerWon else loser" class="winner"> Winner 😎 🏆</strong>
+    </h3>
+    <div class="computer-cards">
+      <app-card *ngFor="let card of computerCards" [card]="card" [hidden]="hideComputerCards"></app-card>
+    </div>
+    <small *ngIf="!hideComputerCards">{{this.computerHand?.name}}</small>
+  </div>
+
+  <div class="community-wrap">
+    <div class="community-cards">
+      <app-card *ngFor="let card of communityCards" [card]="card"></app-card>
+    </div>
+    <div *ngIf="chips" class="chips">{{chips}}</div>
+  </div>
+
+  <div class="player-wrap">
+    <h3>Player
+      <strong *ngIf="!hideComputerCards && this.playerWon else loser" class="winner">  Winner 😎 🏆</strong>
+    </h3>
+    <div class="player-cards">
+      <app-card *ngFor="let card of playerCards" [card]="card"></app-card>
+    </div>
+    <small *ngIf="this.playerHand?.name">{{this.playerHand?.name}}</small>
+  </div>
+</main>
+<hr />
+
+<nav class="actions">
+  <ng-container *ngIf="!isCheckedEnabled else playerActions">
+    <button (click)="startGame()" class="btn-green">
+      Start Game
+    </button>
+  </ng-container>
+</nav>
+
+<ng-template #playerActions>
+  <button (click)="fold()" class="btn-red">
+    Fold
+  </button>
+  <button (click)="check()" class="btn-purple">
+    Check
+  </button>
+  <button (click)="bet()" class="btn-green">
+  Bet
+</button>
+</ng-template>
+
+
+<ng-template #loser>
+  <strong *ngIf="!hideComputerCards" class="loser">  Loser 😢 😭</strong>
+</ng-template>

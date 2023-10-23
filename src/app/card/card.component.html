@@ -1,0 +1,9 @@
+<ng-container *ngIf="!hidden else hideCard">
+  <div class="card" [ngClass]="getColor">{{card}}</div>
+</ng-container>
+
+<ng-template #hideCard>
+  <div class="card">
+    <div class="hidden"></div>
+  </div>
+</ng-template>
